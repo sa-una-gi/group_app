@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @new_book = Book.new
   	@book = Book.find(params[:id])
     @user = User.find_by(id: @book.user_id)
   end
@@ -28,7 +29,6 @@ class BooksController < ApplicationController
       redirect_to books_path
     end
   end
-
 
 
   def update
