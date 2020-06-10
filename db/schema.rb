@@ -13,7 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_06_09_084628) do
 
   create_table "bookgroups", force: :cascade do |t|
-    t.integer "books"
+    t.integer "choice_id"
+    t.integer "prev_id"
+    t.integer "next_id"
     t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
